@@ -64,8 +64,8 @@ GO
 
 CREATE TABLE dbo.InvoiceHeader (
   Id int IDENTITY(1, 1) NOT NULL,
-  Buyer int NOT NULL,
-  Seller int NOT NULL,
+  IdBuyer int NOT NULL,
+  IdSeller int NOT NULL,
   IsPriceNet bit NULL,
   IsVatSummed bit NULL,
   CreationDate datetime2(7) NOT NULL,
@@ -78,11 +78,11 @@ CREATE TABLE dbo.InvoiceHeader (
     WITH (
       PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF,
       ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON),
-  CONSTRAINT InvoiceHeader_fk FOREIGN KEY (Buyer) 
+  CONSTRAINT InvoiceHeader_fk FOREIGN KEY (IdBuyer) 
   REFERENCES dbo.Contractor (Id) 
   ON UPDATE NO ACTION
   ON DELETE NO ACTION,
-  CONSTRAINT InvoiceHeader_fk2 FOREIGN KEY (Seller) 
+  CONSTRAINT InvoiceHeader_fk2 FOREIGN KEY (IdSeller) 
   REFERENCES dbo.Contractor (Id) 
   ON UPDATE NO ACTION
   ON DELETE NO ACTION
@@ -90,8 +90,21 @@ CREATE TABLE dbo.InvoiceHeader (
 ON [PRIMARY]
 GO
 
-CREATE NONCLUSTERED INDEX InvoiceHeader_idx_Buyer ON dbo.InvoiceHeader
-  (Buyer)
+CREATE NONCLUSTERED INDEX InvoiceHeader_idx_IdBuyer ON dbo.InvoiceHeader
+  (IdBuyer)
+WITH (
+  PAD_INDEX = OFF,
+  DROP_EXISTING = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  SORT_IN_TEMPDB = OFF,
+  ONLINE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+ON [PRIMARY]
+GO
+
+CREATE NONCLUSTERED INDEX InvoiceHeader_idx_IdSeller ON dbo.InvoiceHeader
+  (IdSeller)
 WITH (
   PAD_INDEX = OFF,
   DROP_EXISTING = OFF,
@@ -105,19 +118,6 @@ GO
 
 CREATE NONCLUSTERED INDEX InvoiceHeader_idx_PaymentDate ON dbo.InvoiceHeader
   (PaymentDate)
-WITH (
-  PAD_INDEX = OFF,
-  DROP_EXISTING = OFF,
-  STATISTICS_NORECOMPUTE = OFF,
-  SORT_IN_TEMPDB = OFF,
-  ONLINE = OFF,
-  ALLOW_ROW_LOCKS = ON,
-  ALLOW_PAGE_LOCKS = ON)
-ON [PRIMARY]
-GO
-
-CREATE NONCLUSTERED INDEX InvoiceHeader_idx_Seller ON dbo.InvoiceHeader
-  (Seller)
 WITH (
   PAD_INDEX = OFF,
   DROP_EXISTING = OFF,
