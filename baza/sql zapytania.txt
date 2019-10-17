@@ -228,3 +228,134 @@ CREATE TABLE dbo.WarehouseDocumentPosition (
 )
 ON [PRIMARY]
 GO
+
+ALTER TABLE dbo.Warehouse
+ADD IdOwner int NOT NULL
+GO
+
+ALTER TABLE dbo.Warehouse
+ADD CONSTRAINT Warehouse_fk FOREIGN KEY (IdOwner) 
+  REFERENCES dbo.Contractor (Id) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE dbo.WarehouseDocumentHeader
+ADD IdWarehouse int NOT NULL
+GO
+
+ALTER TABLE dbo.WarehouseDocumentHeader
+ADD CONSTRAINT WarehouseDocumentHeader_fk FOREIGN KEY (IdIssuer) 
+  REFERENCES dbo.Contractor (Id) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+ALTER TABLE dbo.WarehouseDocumentHeader
+ADD CONSTRAINT WarehouseDocumentHeader_fk2 FOREIGN KEY (IdContractor) 
+  REFERENCES dbo.Contractor (Id) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+CREATE NONCLUSTERED INDEX WarehouseDocumentHeader_idx_IssueDate ON dbo.WarehouseDocumentHeader
+  (IssueDate)
+WITH (
+  PAD_INDEX = OFF,
+  DROP_EXISTING = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  SORT_IN_TEMPDB = OFF,
+  ONLINE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+GO
+
+CREATE NONCLUSTERED INDEX WarehouseDocumentHeader_idx_IdIssuer ON dbo.WarehouseDocumentHeader
+  (IdIssuer)
+WITH (
+  PAD_INDEX = OFF,
+  DROP_EXISTING = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  SORT_IN_TEMPDB = OFF,
+  ONLINE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+GO
+
+CREATE NONCLUSTERED INDEX WarehouseDocumentHeader_idx_IdContractor ON dbo.WarehouseDocumentHeader
+  (IdContractor)
+WITH (
+  PAD_INDEX = OFF,
+  DROP_EXISTING = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  SORT_IN_TEMPDB = OFF,
+  ONLINE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+GO
+
+CREATE NONCLUSTERED INDEX WarehouseDocumentHeader_idx_IdWarehouse ON dbo.WarehouseDocumentHeader
+  (IdWarehouse)
+WITH (
+  PAD_INDEX = OFF,
+  DROP_EXISTING = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  SORT_IN_TEMPDB = OFF,
+  ONLINE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+GO
+
+ALTER TABLE dbo.WarehouseDocumentPosition
+ADD CONSTRAINT WarehouseDocumentPosition_fk FOREIGN KEY (IdProduct) 
+  REFERENCES dbo.Product (Id) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+CREATE NONCLUSTERED INDEX WarehouseDocumentPosition_idx_IdWarehouseDocumentHeader ON dbo.WarehouseDocumentPosition
+  (IdWarehouseDocumentHeader)
+WITH (
+  PAD_INDEX = OFF,
+  DROP_EXISTING = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  SORT_IN_TEMPDB = OFF,
+  ONLINE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+GO
+
+CREATE NONCLUSTERED INDEX WarehouseDocumentPosition_idx_IdProduct ON dbo.WarehouseDocumentPosition
+  (IdProduct)
+WITH (
+  PAD_INDEX = OFF,
+  DROP_EXISTING = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  SORT_IN_TEMPDB = OFF,
+  ONLINE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+GO
+
+ALTER TABLE dbo.WarehouseDocumentPosition
+ADD IdInvoicePosition int NULL
+GO
+
+ALTER TABLE dbo.WarehouseDocumentPosition
+ADD CONSTRAINT WarehouseDocumentPosition_fk2 FOREIGN KEY (IdInvoicePosition) 
+  REFERENCES dbo.InvoicePosition (Id) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
+
+CREATE NONCLUSTERED INDEX WarehouseDocumentPosition_idx_IdInvoicePosition ON dbo.WarehouseDocumentPosition
+  (IdInvoicePosition)
+WITH (
+  PAD_INDEX = OFF,
+  DROP_EXISTING = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  SORT_IN_TEMPDB = OFF,
+  ONLINE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+GO
