@@ -359,3 +359,32 @@ WITH (
   ALLOW_ROW_LOCKS = ON,
   ALLOW_PAGE_LOCKS = ON)
 GO
+
+ALTER TABLE dbo.InvoicePosition
+DROP CONSTRAINT Position_fk2
+GO
+
+ALTER TABLE dbo.InvoicePosition
+ADD CONSTRAINT Position_fk2 FOREIGN KEY (IdHeader) 
+  REFERENCES dbo.InvoiceHeader (Id) 
+  ON UPDATE NO ACTION
+  ON DELETE CASCADE
+GO
+
+ALTER TABLE dbo.WarehouseDocumentPosition
+DROP CONSTRAINT IdWarehouseDocumentHeader
+GO
+
+ALTER TABLE dbo.WarehouseDocumentPosition
+ADD CONSTRAINT IdWarehouseDocumentHeader FOREIGN KEY (IdWarehouseDocumentHeader) 
+  REFERENCES dbo.WarehouseDocumentHeader (Id) 
+  ON UPDATE NO ACTION
+  ON DELETE CASCADE
+GO
+
+ALTER TABLE dbo.WarehouseDocumentHeader
+ADD CONSTRAINT WarehouseDocumentHeader_fk3 FOREIGN KEY (IdWarehouse) 
+  REFERENCES dbo.Warehouse (Id) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+GO
