@@ -182,3 +182,49 @@ WITH (
   ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
+
+CREATE TABLE dbo.WarehouseDocumentHeader (
+  Id int NOT NULL,
+  DocumentDate date NULL,
+  IssueDate date NULL,
+  IdIssuer int NULL,
+  IdContractor int NULL,
+  PRIMARY KEY CLUSTERED (Id)
+    WITH (
+      PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF,
+      ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+ON [PRIMARY]
+GO
+
+CREATE NONCLUSTERED INDEX whdHdrIndxDocDate ON dbo.WarehouseDocumentHeader
+  (DocumentDate)
+WITH (
+  PAD_INDEX = OFF,
+  DROP_EXISTING = OFF,
+  STATISTICS_NORECOMPUTE = OFF,
+  SORT_IN_TEMPDB = OFF,
+  ONLINE = OFF,
+  ALLOW_ROW_LOCKS = ON,
+  ALLOW_PAGE_LOCKS = ON)
+ON [PRIMARY]
+GO
+
+CREATE TABLE dbo.WarehouseDocumentPosition (
+  Id int NOT NULL,
+  IdWarehouseDocumentHeader int NOT NULL,
+  Position int NOT NULL,
+  IdProduct int NULL,
+  Quantity int NULL,
+  UnitPrice money NULL,
+  CONSTRAINT PK_whdPos_uq PRIMARY KEY CLUSTERED (Id)
+    WITH (
+      PAD_INDEX = OFF, IGNORE_DUP_KEY = OFF, STATISTICS_NORECOMPUTE = OFF,
+      ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON),
+  CONSTRAINT IdWarehouseDocumentHeader FOREIGN KEY (IdWarehouseDocumentHeader) 
+  REFERENCES dbo.WarehouseDocumentHeader (Id) 
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION
+)
+ON [PRIMARY]
+GO
