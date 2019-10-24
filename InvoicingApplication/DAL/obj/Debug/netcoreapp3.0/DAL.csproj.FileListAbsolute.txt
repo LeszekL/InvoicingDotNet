@@ -6,3 +6,5 @@ C:\_repos\InvoicingDotNet\InvoicingApplication\DAL\obj\Debug\netcoreapp3.0\DAL.A
 C:\_repos\InvoicingDotNet\InvoicingApplication\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfo.cs
 C:\_repos\InvoicingDotNet\InvoicingApplication\DAL\obj\Debug\netcoreapp3.0\DAL.dll
 C:\_repos\InvoicingDotNet\InvoicingApplication\DAL\obj\Debug\netcoreapp3.0\DAL.pdb
+C:\_repos\InvoicingDotNet\InvoicingApplication\DAL\bin\Debug\netcoreapp3.0\DAL.runtimeconfig.json
+C:\_repos\InvoicingDotNet\InvoicingApplication\DAL\bin\Debug\netcoreapp3.0\DAL.runtimeconfig.dev.json
