@@ -9,7 +9,6 @@ namespace DAL
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected readonly DbContext Context;
-
         public Repository(DbContext context)
         {
             Context = context;
