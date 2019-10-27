@@ -4868,21 +4868,19 @@
   },
   "packageFolders": {
     "C:\\Users\\lesze\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\DAL\\DAL.csproj",
+      "projectPath": "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\lesze\\.nuget\\packages\\",
-      "outputPath": "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\DAL\\obj\\",
+      "outputPath": "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\lesze\\AppData\\Roaming\\NuGet\\NuGet.Config",

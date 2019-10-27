@@ -1,9 +1,10 @@
-﻿using DAL.Models;
+﻿using DAL.Abstraction;
+using DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace DAL.Implementation
 {
     public class UnitOfWorkEF : IUnitOfWork
     {

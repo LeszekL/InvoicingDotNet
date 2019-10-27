@@ -1,21 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\WpfApplication.csproj": {}
+    "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\WpfApplication.csproj": {}
   },
   "projects": {
-    "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\WpfApplication.csproj": {
+    "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\WpfApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\WpfApplication.csproj",
+        "projectUniqueName": "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\WpfApplication.csproj",
         "projectName": "WpfApplication",
-        "projectPath": "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\WpfApplication.csproj",
+        "projectPath": "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\WpfApplication.csproj",
         "packagesPath": "C:\\Users\\lesze\\.nuget\\packages\\",
-        "outputPath": "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\obj\\",
+        "outputPath": "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\WpfApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\lesze\\AppData\\Roaming\\NuGet\\NuGet.Config",

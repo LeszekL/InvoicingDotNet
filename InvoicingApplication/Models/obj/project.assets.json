@@ -9,21 +9,19 @@
   },
   "packageFolders": {
     "C:\\Users\\lesze\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\Models\\Models.csproj",
+      "projectUniqueName": "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\Models\\Models.csproj",
+      "projectPath": "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\lesze\\.nuget\\packages\\",
-      "outputPath": "C:\\_repos\\InvoicingDotNet\\InvoicingApplication\\Models\\obj\\",
+      "outputPath": "D:\\Repos\\InvoicingDotNet\\InvoicingApplication\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\lesze\\AppData\\Roaming\\NuGet\\NuGet.Config",
